@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -15,6 +17,7 @@ import javax.persistence.Id;
 @ToString
 public class Car {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String carId;
     private String registerNo;
     private String transmissionType;
