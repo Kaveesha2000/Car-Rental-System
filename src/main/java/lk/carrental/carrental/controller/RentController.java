@@ -13,8 +13,12 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 public class RentController {
 
-    @Autowired
+    final
     RentService rentService;
+
+    public RentController(RentService rentService) {
+        this.rentService = rentService;
+    }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)

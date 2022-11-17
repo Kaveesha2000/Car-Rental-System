@@ -13,8 +13,12 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 public class DriverController {
 
-    @Autowired
+    final
     DriverService driverService;
+
+    public DriverController(DriverService driverService) {
+        this.driverService = driverService;
+    }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)

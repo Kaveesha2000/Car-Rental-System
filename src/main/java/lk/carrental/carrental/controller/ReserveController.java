@@ -13,8 +13,12 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 public class ReserveController {
 
-    @Autowired
+    final
     ReserveService reserveService;
+
+    public ReserveController(ReserveService reserveService) {
+        this.reserveService = reserveService;
+    }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
