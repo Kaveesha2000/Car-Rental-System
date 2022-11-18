@@ -16,7 +16,7 @@ import javax.validation.constraints.Size;
 @IdClass(ReserveDetails_PK.class)
 public class ReserveDetail  {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private String reserveId;
     @Id
     private String carId;
@@ -35,14 +35,14 @@ public class ReserveDetail  {
     private double lossDamageWaiverPayment;
 
     @ManyToOne
-    @JoinColumn(name = "reserveId",referencedColumnName = "reserve_Id",updatable = false,insertable = false)
+    @JoinColumn(name = "reserveId",referencedColumnName = "reserveId",updatable = false,insertable = false)
     private Reserve reserve;
 
     @ManyToOne
-    @JoinColumn(name = "carId",referencedColumnName = "car_Id",insertable = false,updatable = false)
+    @JoinColumn(name = "carId",referencedColumnName = "carId",insertable = false,updatable = false)
     private Car car;
 
     @ManyToOne
-    @JoinColumn(name = "driverId",referencedColumnName = "driver_Id",insertable = false,updatable = false)
+    @JoinColumn(name = "driverId",referencedColumnName = "driverId",insertable = false,updatable = false)
     private Driver driver;
 }

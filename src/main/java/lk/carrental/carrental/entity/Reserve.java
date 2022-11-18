@@ -36,7 +36,7 @@ public class Reserve {
     private String acceptOrDeny;
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "customer_Id", referencedColumnName = "customer_Id", nullable = false)
+    @JoinColumn(name = "customerId", referencedColumnName = "customerId", nullable = false)
     private Customer customer;
 
     @OneToMany(mappedBy = "reserve",cascade = CascadeType.ALL)
